@@ -20,7 +20,7 @@ def run_eda_app():
     freq_df = load_data("data/freqdist_of_age_data.csv")
     boluscdf1 = load_data("data/preprocessed/Bolus Calculator.csv")
     physicalactivitydf = load_data("data/preprocessed/Physical Activity.csv")
-    fooddf = load_data("data/preprocessed/food.csv")
+    fooddf = load_data("data/preprocessed/Food.csv")
     smbgdf = load_data("data/preprocessed/SMBG.csv")
     bolusdf = load_data("data/preprocessed/Bolus.csv")
     deviceeventdf = load_data("data/preprocessed/Device Event.csv")
