@@ -2,21 +2,21 @@ import streamlit as st
 import streamlit.components.v1 as stc
 from eda_app import run_eda_app
 from ml_app import run_ml_app
+from medap_app import run_medap_app
 from PIL import Image
 
 html_temp = """
 		<div style="background-color:#3872fb;padding:10px;border-radius:10px">
-		<h1 style="color:white;text-align:center;">Tidepool Data App </h1>
-		<h4 style="color:white;text-align:center;">Diabetes </h4>
+		<h1 style="color:white;text-align:center;">Kx Solutions Data App </h1>
+		<h4 style="color:white;text-align:center;">Data Insights</h4>
 		</div>
 		"""
 desc_temp = """
-			### Tidepool App
-			This dataset contains Tidepool events.
-			#### App Content
-				- EDA Section: Exploratory Data Analysis of Data
-				- ML Section: ML Predictor App
-
+			### Kx Solutions Data App
+App Content
+- EDA Section: Exploratory Data Analysis of Data
+- ML Section: ML Predictor App
+- MEDAP Section: Accounts Payable Analysis
 			"""
   
 def add_logo(logo_path, width, height):
@@ -35,7 +35,7 @@ def main():
     my_logo = add_logo(logo_path="data/kxlogo.png", width=70, height=60)
     st.sidebar.image(my_logo)
     
-    menu = ["Home","EDA","ML","About"]
+    menu = ["Home","EDA","ML","MEDAP","About"]
     choice = st.sidebar.selectbox("Menu",menu)
     
     if choice == "Home":
@@ -45,6 +45,8 @@ def main():
         run_eda_app()
     elif choice == "ML":
         run_ml_app()
+    elif choice == "MEDAP":
+        run_medap_app()
     else:
         st.subheader("About")
         st.text("Learn More - Todo")
