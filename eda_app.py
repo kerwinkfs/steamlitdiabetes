@@ -14,26 +14,85 @@ def load_data(data):
 	return df
 
 def run_eda_app():
-    st.subheader("EDA Section")
+    st.subheader("Tidepool Data")
     df = load_data("data/diabetes_data_upload.csv")
     df_clean = load_data("data/diabetes_data_upload_clean.csv")
     freq_df = load_data("data/freqdist_of_age_data.csv")
+    boluscdf1 = load_data("data/preprocessed/Bolus Calculator.csv")
+    physicalactivitydf = load_data("data/preprocessed/Physical Activity.csv")
+    fooddf = load_data("data/preprocessed/food.csv")
+    smbgdf = load_data("data/preprocessed/SMBG.csv")
+    bolusdf = load_data("data/preprocessed/Bolus.csv")
+    deviceeventdf = load_data("data/preprocessed/Device Event.csv")
+    cgmdf = load_data("data/preprocessed/CGM.csv")
+    basaldf = load_data("data/preprocessed/Basal.csv")
     
     submenu = st.sidebar.selectbox("SubMenu",["Descriptive","Plots"])
     if submenu == "Descriptive":
-        st.dataframe(df)
+        st.subheader("Bolus Calcultor Data")
+        st.dataframe(boluscdf1)
         with st.expander("Data Types"):
-            st.dataframe(df.dtypes)
+            st.dataframe(boluscdf1.dtypes)
             
         with st.expander("Descriiptive Summary"):
-            st.dataframe(df_clean.describe())
+            st.dataframe(boluscdf1.describe())
             
-        with st.expander("Class Distribution"):
-            st.dataframe(df['class'].value_counts())
+        st.subheader("Physical Activity Data")
+        st.dataframe(physicalactivitydf)
+        with st.expander("Data Types"):
+            st.dataframe(physicalactivitydf.dtypes)
             
-        with st.expander("Gender Distribution"):
-            st.dataframe(df['Gender'].value_counts())
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(physicalactivitydf.describe())
             
+        st.subheader("Food Data")
+        st.dataframe(fooddf)
+        with st.expander("Data Types"):
+            st.dataframe(fooddf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(fooddf.describe())
+            
+        st.subheader("Bolus Data")
+        st.dataframe(bolusdf)
+        with st.expander("Data Types"):
+            st.dataframe(bolusdf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(bolusdf.describe())
+            
+        st.subheader("Basal Data")
+        st.dataframe(basaldf)
+        with st.expander("Data Types"):
+            st.dataframe(basaldf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(basaldf.describe())
+            
+        st.subheader("Device Event")
+        st.dataframe(deviceeventdf)
+        with st.expander("Data Types"):
+            st.dataframe(deviceeventdf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(deviceeventdf.describe())
+            
+        st.subheader("SMBG Data")
+        st.dataframe(smbgdf)
+        with st.expander("Data Types"):
+            st.dataframe(smbgdf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(smbgdf.describe())
+            
+        st.subheader("CGM Data")
+        st.dataframe(cgmdf)
+        with st.expander("Data Types"):
+            st.dataframe(cgmdf.dtypes)
+            
+        with st.expander("Descriiptive Summary"):
+            st.dataframe(cgmdf.describe())
+        
     elif submenu == "Plots":
         st.subheader("Plots")
         # Layout

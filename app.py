@@ -6,15 +6,13 @@ from PIL import Image
 
 html_temp = """
 		<div style="background-color:#3872fb;padding:10px;border-radius:10px">
-		<h1 style="color:white;text-align:center;">Early Stage DM Risk Data App </h1>
+		<h1 style="color:white;text-align:center;">Tidepool Data App </h1>
 		<h4 style="color:white;text-align:center;">Diabetes </h4>
 		</div>
 		"""
 desc_temp = """
-			### Early Stage Diabetes Risk Predictor App
-			This dataset contains the sign and symptoms data of newly diabetic or would be diabetic patient.
-			#### Datasource
-				- https://archive.ics.uci.edu/ml/datasets/Early+stage+diabetes+risk+prediction+dataset.
+			### Tidepool App
+			This dataset contains Tidepool events.
 			#### App Content
 				- EDA Section: Exploratory Data Analysis of Data
 				- ML Section: ML Predictor App
@@ -29,6 +27,8 @@ def add_logo(logo_path, width, height):
 
 def main():
 	
+    st.set_page_config(page_title="Kxsolutions Demo", page_icon=":robot:")
+    
     #st.title("Main App")
     stc.html(html_temp)
     
