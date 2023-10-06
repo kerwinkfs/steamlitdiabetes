@@ -7,12 +7,12 @@ from PIL import Image
 
 html_temp = """
 		<div style="background-color:#3872fb;padding:10px;border-radius:10px">
-		<h1 style="color:white;text-align:center;">Kx Solutions Data App </h1>
+		<h1 style="color:white;text-align:center;">K(x) Solutions Data App </h1>
 		<h4 style="color:white;text-align:center;">Data Insights</h4>
 		</div>
 		"""
 desc_temp = """
-			### Kx Solutions Data App
+			### K(x) Solutions Data App
 App Content
 - EDA Section: Exploratory Data Analysis of Data
 - ML Section: ML Predictor App
@@ -27,7 +27,7 @@ def add_logo(logo_path, width, height):
 
 def main():
 	
-    st.set_page_config(page_title="Kxsolutions Demo", page_icon=":robot:")
+    st.set_page_config(page_title="Kxsolutions Data App", page_icon=":robot:")
     
     #st.title("Main App")
     stc.html(html_temp)
